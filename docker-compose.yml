@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_APP_NAME=StacksFort
+      - NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    restart: unless-stopped
